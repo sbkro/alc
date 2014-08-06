@@ -164,3 +164,24 @@ def test_query_include_month_and_year():
     actual = CalendarCommand(config).execute()
 
     assert expect == actual
+
+
+def test_query_is_invalid():
+    '''
+    Integration scenario when have been put invalid query in Aflred's prompt.
+    '''
+    config = {
+        'query': '13 2013',
+        'first_week_day': calendar.SUNDAY,
+        'default_datetime_format': '%Y/%m/%d (%a)\t%H:%M:%S',
+        'specified_datetime_format': '%Y/%m'
+    }
+    expect = '<items>' + \
+             '<item autocomplete="" uid="0" valid="no">' + \
+             '<title>usage: alc [month (1-12)] [year (1900-9999)]</title>' + \
+             '</item>' + \
+             '</items>'
+
+    actual = CalendarCommand(config).execute()
+
+    assert expect == actual
