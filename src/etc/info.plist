@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>jp.sbkro.alc</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict/>
 	<key>createdby</key>
