@@ -12,10 +12,10 @@ SRC_DIR=./src
 APP_FILE=alc.alfredworkflow
 
 mkdir $BUILD_DIR
-cp -r $SRC_DIR/alc            $BUILD_DIR
-cp    $SRC_DIR/etc/info.plist $BUILD_DIR
+cp -r $SRC_DIR/alc    $BUILD_DIR
+cp    $SRC_DIR/etc/*  $BUILD_DIR
 pushd $BUILD_DIR
-zip $APP_FILE ./alc/*.py ./info.plist
+zip $APP_FILE ./alc/*.py ./*
 mv  $APP_FILE ..
 popd
 rm -fr $BUILD_DIR
